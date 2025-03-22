@@ -30,8 +30,6 @@ type FormProps = {
 };
 
 const Form = ({ setWeatherData, units, setCity }: FormProps): JSX.Element => {
-  const apiKey: string = '1a63951585f4a3d3cc9b1201eafc0b69';
-
   useEffect(() => {
     setCity('Copenhagen');
     getWeatherData('Copenhagen');
@@ -49,6 +47,10 @@ const Form = ({ setWeatherData, units, setCity }: FormProps): JSX.Element => {
     lat: number;
     lon: number;
   };
+
+  const apiKey: string = process.env.APIKEY_SECRET
+    ? process.env.APIKEY_SECRET
+    : '';
 
   const getWeatherData = (city: string): void => {
     fetch(
