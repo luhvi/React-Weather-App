@@ -48,8 +48,8 @@ const Form = ({ setWeatherData, units, setCity }: FormProps): JSX.Element => {
     lon: number;
   };
 
-  const apiKey: string = process.env.APIKEY_SECRET
-    ? process.env.APIKEY_SECRET
+  const apiKey: string = import.meta.env.VITE_APIKEY_SECRET
+    ? import.meta.env.VITE_APIKEY_SECRET
     : '';
 
   const getWeatherData = (city: string): void => {
