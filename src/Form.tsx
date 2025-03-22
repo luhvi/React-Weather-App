@@ -54,7 +54,7 @@ const Form = ({ setWeatherData, units, setCity }: FormProps): JSX.Element => {
 
   const getWeatherData = (city: string): void => {
     fetch(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${apiKey}`
+      `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${apiKey}`
     )
       .then((response) => response.json())
       .then((data) => {
