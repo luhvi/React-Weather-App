@@ -70,9 +70,13 @@ const Form = ({ setWeatherData, units, setCity }: FormProps): JSX.Element => {
               } else {
                 throw new Error('No city found.');
               }
-            });
+            })
+            .catch((error) =>
+              console.log(`fetching weather data from lat and lon ${error}`)
+            );
         }
-      });
+      })
+      .catch((error) => console.log(`fetching lon and lat ${error}`));
   };
 
   return (
